@@ -6,8 +6,8 @@ public class Appliance {
     public Appliance(String name, double usagePerMin, double Min) {
         this.name = name;
         this.usagePerMin = usagePerMin;
-        this.Min=Min;
- 
+        this.Min = Min;
+
     }
 
     public String getName() {
@@ -17,8 +17,9 @@ public class Appliance {
     public double getUsagePerMin() {
         return usagePerMin;
     }
+
     public double Min() {
         return Min;
     }
-    
+
 }

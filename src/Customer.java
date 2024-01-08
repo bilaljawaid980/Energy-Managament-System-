@@ -2,13 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class Customer extends Admin {
     private String username;
     private String password;
     private double consumption;
     private double conlimit;
-//    private double Min;
+    //    private double Min;
     private boolean alert;
     private List<Appliance> appliances;
 
@@ -28,20 +27,22 @@ public class Customer extends Admin {
     public String getPassword() {
         return password;
     }
-    public double getConlimit(){
-    	return conlimit;
+
+    public double getConlimit() {
+        return conlimit;
     }
 
     public void addAppliance(String name, double usagePerMin, double Min) {
-Appliance appliance = new Appliance(name, usagePerMin, Min);
-appliances.add(appliance);
+        Appliance appliance = new Appliance(name, usagePerMin, Min);
+        appliances.add(appliance);
 // Update the consumption
-consumption += (usagePerMin*Min);
+        consumption += (usagePerMin * Min);
 // Check if consumption exceeds a certain threshold
-if (consumption > conlimit) {
-alert = true;
-}
-}
+        if (consumption > conlimit) {
+            alert = true;
+        }
+    }
+
     public String[] getAppNames() {
         String[] appNames = new String[appliances.size()];
         for (int i = 0; i < appliances.size(); i++) {
@@ -57,6 +58,6 @@ alert = true;
     public boolean isAlert() {
         return alert;
     }
-    
-	
+
+
 }
