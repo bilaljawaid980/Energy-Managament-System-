@@ -1,4 +1,3 @@
-		
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -25,6 +24,7 @@ import javafx.geometry.Insets;
 import java.io.Console;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -121,33 +121,33 @@ public class EnergyManagementSystem extends Application {
     }
 
     private void showLoginForm() {
-    	
-    	 Label heading = new Label();
-         Text text = new Text("Welcome To Energy Management System");
-         text.setFont(Font.font("Georgia", FontWeight.BOLD, FontPosture.ITALIC, 30));
-         text.setFill(Color.WHITE);
-         text.setUnderline(true);
-         StackPane stackPane = new StackPane(text);
-         stackPane.setPadding(new Insets(0, 0, 0, 20)); // Add left padding of 20 pixels
-         heading.setGraphic(stackPane);
-    
+
+        Label heading = new Label();
+        Text text = new Text("Welcome To Energy Management System");
+        text.setFont(Font.font("Georgia", FontWeight.BOLD, FontPosture.ITALIC, 30));
+        text.setFill(Color.WHITE);
+        text.setUnderline(true);
+        StackPane stackPane = new StackPane(text);
+        stackPane.setPadding(new Insets(0, 0, 0, 20)); // Add left padding of 20 pixels
+        heading.setGraphic(stackPane);
+
 
         Label usernameLabel = new Label("Username:");
         usernameLabel.setFont(Font.font("Georgia", 15));
         usernameLabel.setTextFill(Color.WHITE);
         HBox hb2 = new HBox(10);
-        
+
         hb2.setStyle("-fx-alignment: center;");
         usernameField = new TextField();
-        hb2.getChildren().addAll(usernameLabel,usernameField);
+        hb2.getChildren().addAll(usernameLabel, usernameField);
         Label passwordLabel = new Label("Password:");
         HBox hb3 = new HBox(10);
-       
+
         hb3.setStyle("-fx-alignment: center;");
         passwordLabel.setFont(Font.font("Georgia", 15));
         passwordLabel.setTextFill(Color.WHITE);
         passwordField = new PasswordField();
-        hb3.getChildren().addAll(passwordLabel,passwordField);
+        hb3.getChildren().addAll(passwordLabel, passwordField);
         Button loginButton = new Button("Login");
         loginButton.setPrefWidth(80);
         loginButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
@@ -155,24 +155,27 @@ public class EnergyManagementSystem extends Application {
         loginButton.setOnAction(e -> handleLogin());
         loginButton.setOnMouseEntered(event -> {
             // Set hover style
-        	loginButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");});
-        
+            loginButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+        });
+
         loginButton.setOnMouseExited(event -> {
             // Set normal style
-        	loginButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            loginButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
         Button signUpButton = new Button("Sign Up");
         signUpButton.setPrefWidth(80);
         signUpButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
 
         signUpButton.setOnAction(e -> showSignUpForm());
-       
+
         signUpButton.setOnMouseEntered(event -> {
             // Set hover style
-        	signUpButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");});
+            signUpButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+        });
         signUpButton.setOnMouseEntered(event -> {
             // Set hover style
-        	signUpButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");});
+            signUpButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+        });
 
 //        StackPane.add(heading, 0, 0);
 //        gridPane.add(signUpButton, 1, 4);
@@ -182,17 +185,17 @@ public class EnergyManagementSystem extends Application {
 //        gridPane.add(passwordField, 1, 2);
 //        gridPane.add(loginButton, 1, 3);
         HBox hb4 = new HBox(10);
-        hb4.getChildren().addAll(loginButton,signUpButton);
-        
+        hb4.getChildren().addAll(loginButton, signUpButton);
+
         hb4.setStyle("-fx-alignment: center;");
         HBox hbox = new HBox(20);
-        hbox.getChildren().addAll(heading,hb2);
+        hbox.getChildren().addAll(heading, hb2);
         hbox.setStyle("-fx-alignment: center;");
         VBox vbox = new VBox(20);
-        
+
         Pane pane = new HBox(50);
-        
-        
+
+
 //        try {
 //            Image image = new Image(getClass().getResourceAsStream("6.png"));
 //            BackgroundImage backgroundImage = new BackgroundImage(image,
@@ -204,17 +207,17 @@ public class EnergyManagementSystem extends Application {
 //            // Handle exception if the image file is not found
 //            e.printStackTrace();
 //        }
-        
+
         Image image = new Image("7.png");
-        BackgroundImage im=new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        Background bGround=new Background(im);
+        BackgroundImage im = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Background bGround = new Background(im);
         pane.setBackground(bGround);
         pane.getChildren().addAll(vbox);
 //        stackPane.getChildren().add(pane);
-        vbox.getChildren().addAll(hbox,hb2,hb3,hb4);
+        vbox.getChildren().addAll(hbox, hb2, hb3, hb4);
         vbox.setStyle("-fx-alignment: center;");
-        
-        
+
+
         Scene scene = new Scene(pane, 700, 400);
 //        gridPane.setStyle("-fx-background-color: #898C8B;");// Set background color
         primaryStage.setTitle("Login and Sign up");
@@ -228,13 +231,11 @@ public class EnergyManagementSystem extends Application {
 
         if (username.equalsIgnoreCase(admin.getUsername()) && password.equalsIgnoreCase(admin.getPassword())) {
             showAdminDashboard();
-        } 
-        else {
+        } else {
             int userIndex = customerLogin(username, password);
             if (userIndex != -1) {
                 showUserDashboard(userIndex);
-            }
-            else {
+            } else {
                 showAlert("Invalid login credentials!");
             }
         }
@@ -243,14 +244,12 @@ public class EnergyManagementSystem extends Application {
     private void showSignUpForm() {
         Stage signUpStage = new Stage();
         signUpStage.setTitle("Sign Up");
-        
-        
-        
-      
+
+
         Label heading = new Label();
 
-        
-        Text text  = new Text("SIGN UP");
+
+        Text text = new Text("SIGN UP");
         text.setFont(Font.font("Georgia", FontWeight.BOLD, FontPosture.ITALIC, 35));
         text.setFill(Color.WHITE);
         text.setUnderline(true);
@@ -258,13 +257,13 @@ public class EnergyManagementSystem extends Application {
         StackPane stackPane = new StackPane(text);
         heading.setPadding(new Insets(0, 10, 0, 275)); // Add left padding of 20 pixels
         heading.setGraphic(stackPane);
-        
+
         Label nusernameLabel = new Label("Username:");
         TextField usernameField = new TextField();
         nusernameLabel.setFont(Font.font("Georgia", 15));
         nusernameLabel.setTextFill(Color.WHITE);
         HBox hb2 = new HBox(10);
-        hb2.getChildren().addAll(nusernameLabel,usernameField);
+        hb2.getChildren().addAll(nusernameLabel, usernameField);
         hb2.setStyle("-fx-alignment: center;");
 
 
@@ -272,25 +271,25 @@ public class EnergyManagementSystem extends Application {
         PasswordField passwordField = new PasswordField();
         passwordLabel.setFont(Font.font("Georgia", 15));
         passwordLabel.setTextFill(Color.WHITE);
-        
-        
+
+
         HBox hb3 = new HBox(10);
-        hb3.getChildren().addAll(passwordLabel,passwordField);
+        hb3.getChildren().addAll(passwordLabel, passwordField);
         hb3.setStyle("-fx-alignment: center;");
 
-        
+
         Label ConLimitLabel = new Label("Units To Be Used");
         TextField Conlimit = new TextField();
-        
+
         ConLimitLabel.setFont(Font.font("Georgia", 15));
         ConLimitLabel.setTextFill(Color.WHITE);
         HBox hb4 = new HBox(10);
-        hb4.getChildren().addAll(ConLimitLabel,Conlimit);
+        hb4.getChildren().addAll(ConLimitLabel, Conlimit);
         hb4.setStyle("-fx-alignment: center;");
 
 
         Button signUpButton = new Button("Sign Up");
-        
+
         signUpButton.setOnAction(e -> {
             String username = usernameField.getText();
             String password = passwordField.getText();
@@ -299,17 +298,17 @@ public class EnergyManagementSystem extends Application {
             addUser(username, password, conlimit);
             signUpStage.close();
         });
-        
+
         signUpButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         signUpButton.setPrefWidth(80);
         signUpButton.setOnMouseEntered(event -> {
             // Set hover style
-        	signUpButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            signUpButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         signUpButton.setOnMouseExited(event -> {
             // Set normal style
-        	signUpButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            signUpButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
 //        gridPane.add(heading,0,0);
 //        gridPane.add(usernameLabel, 0, 1);
@@ -319,24 +318,24 @@ public class EnergyManagementSystem extends Application {
 //        gridPane.add(ConLimitLabel, 0, 3);
 //        gridPane.add(Conlimit, 1, 3);
 //        gridPane.add(signUpButton, 1, 4);
-        
+
         HBox hb5 = new HBox(10);
         hb5.getChildren().addAll(signUpButton);
         hb5.setStyle("-fx-alignment: center;");
 
         HBox hbox = new HBox(20);
-        hbox.getChildren().addAll(heading,hb2,hb3,hb4);
+        hbox.getChildren().addAll(heading, hb2, hb3, hb4);
         hbox.setStyle("-fx-alignment: center;");
         VBox vbox = new VBox(20);
 
         Pane pane = new HBox(50);
         Image image = new Image("3.png");
-        BackgroundImage im=new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        Background bGround=new Background(im);
+        BackgroundImage im = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Background bGround = new Background(im);
         pane.setBackground(bGround);
         pane.getChildren().addAll(vbox);
 
-        vbox.getChildren().addAll(hbox,hb2,hb3,hb4,hb5);
+        vbox.getChildren().addAll(hbox, hb2, hb3, hb4, hb5);
         vbox.setStyle("-fx-alignment: center;");
         Scene scene = new Scene(pane, 700, 400);
 
@@ -355,28 +354,28 @@ public class EnergyManagementSystem extends Application {
     }
 
     private void showAdminDashboard() {
-    	 Label heading = new Label();
-         Text text = new Text("Admin Dashboard");
-         text.setFont(Font.font("Georgia", FontWeight.BOLD, FontPosture.ITALIC, 35));
-         text.setFill(Color.WHITE);
-         text.setUnderline(true);
-         heading.setGraphic(text);
-         StackPane stackPane = new StackPane(text);
-         stackPane.setPadding(new Insets(0, 0, 0, 35)); // Add left padding of 20 pixels
-         heading.setGraphic(stackPane);
-      
-        
+        Label heading = new Label();
+        Text text = new Text("Admin Dashboard");
+        text.setFont(Font.font("Georgia", FontWeight.BOLD, FontPosture.ITALIC, 35));
+        text.setFill(Color.WHITE);
+        text.setUnderline(true);
+        heading.setGraphic(text);
+        StackPane stackPane = new StackPane(text);
+        stackPane.setPadding(new Insets(0, 0, 0, 35)); // Add left padding of 20 pixels
+        heading.setGraphic(stackPane);
+
+
         Button viewUsersButton = new Button("View Number of Users");
         viewUsersButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         viewUsersButton.setPrefWidth(100);
         viewUsersButton.setOnMouseEntered(event -> {
             // Set hover style
-        	viewUsersButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            viewUsersButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         viewUsersButton.setOnMouseExited(event -> {
             // Set normal style
-        	viewUsersButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            viewUsersButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
         viewUsersButton.setOnAction(e -> showAlert("Total number of users: " + customers.size()));
 
@@ -385,15 +384,15 @@ public class EnergyManagementSystem extends Application {
         signOutButton.setPrefWidth(100);
         signOutButton.setOnMouseEntered(event -> {
             // Set hover style
-        	signOutButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            signOutButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         signOutButton.setOnMouseExited(event -> {
             // Set normal style
-        	signOutButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            signOutButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
-        
-        
+
+
         signOutButton.setOnAction(e -> showLoginForm());
 
 //        vbox.getChildren().addAll(viewUsersButton, signOutButton);
@@ -402,9 +401,8 @@ public class EnergyManagementSystem extends Application {
 //        borderPane.setCenter(vbox);
 
         HBox hb2 = new HBox(10);
-        hb2.getChildren().addAll(signOutButton,viewUsersButton);
+        hb2.getChildren().addAll(signOutButton, viewUsersButton);
         hb2.setStyle("-fx-alignment: center;");
-
 
 
         HBox hbox = new HBox(20);
@@ -414,12 +412,12 @@ public class EnergyManagementSystem extends Application {
 
         Pane pane = new HBox(50);
         Image image = new Image("12.png");
-        BackgroundImage im=new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        Background bGround=new Background(im);
+        BackgroundImage im = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Background bGround = new Background(im);
         pane.setBackground(bGround);
         pane.getChildren().addAll(vbox);
 
-        vbox.getChildren().addAll(hbox,hb2);
+        vbox.getChildren().addAll(hbox, hb2);
         vbox.setStyle("-fx-alignment: center;");
         Scene scene = new Scene(pane, 700, 400);
         primaryStage.setTitle("Admin Dashboard");
@@ -435,15 +433,15 @@ public class EnergyManagementSystem extends Application {
         Text text = new Text("Welcome to User Dashboard");
         StackPane stackPane = new StackPane(text);
 
-        stackPane.setPadding(new Insets(0,0,0,75));
+        stackPane.setPadding(new Insets(0, 0, 0, 75));
         stackPane.setAlignment(Pos.CENTER);
-      
+
         text.setUnderline(true);
         heading.setGraphic(text);
         text.setFont(Font.font("Georgia", FontWeight.BOLD, FontPosture.ITALIC, 38));
         text.setFill(Color.WHITE);
         heading.setGraphic(stackPane);
-        
+
         Button addApplianceButton = new Button("Add Appliance");
         addApplianceButton.setOnAction(e -> showAddApplianceDialog(userIndex));
         addApplianceButton.setPrefWidth(110);
@@ -451,12 +449,12 @@ public class EnergyManagementSystem extends Application {
 
         addApplianceButton.setOnMouseEntered(event -> {
             // Set hover style
-        	addApplianceButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            addApplianceButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         addApplianceButton.setOnMouseExited(event -> {
             // Set normal style
-        	addApplianceButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            addApplianceButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
 
         Button consumptionReportButton = new Button("Consumption Report");
@@ -466,27 +464,27 @@ public class EnergyManagementSystem extends Application {
 
         consumptionReportButton.setOnMouseEntered(event -> {
             // Set hover style
-        	consumptionReportButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            consumptionReportButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         consumptionReportButton.setOnMouseExited(event -> {
             // Set normal style
-        	consumptionReportButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            consumptionReportButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
         Button checkreviews = new Button("Customer Reviews");
-        checkreviews.setOnAction(e ->  showReviews());
+        checkreviews.setOnAction(e -> showReviews());
 
         checkreviews.setPrefWidth(120);
         checkreviews.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
 
         checkreviews.setOnMouseEntered(event -> {
             // Set hover style
-        	checkreviews.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            checkreviews.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         checkreviews.setOnMouseExited(event -> {
             // Set normal style
-        	checkreviews.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            checkreviews.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
 
         Button logOutButton = new Button("Log Out");
@@ -496,39 +494,37 @@ public class EnergyManagementSystem extends Application {
 
         logOutButton.setOnMouseEntered(event -> {
             // Set hover style
-        	logOutButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            logOutButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         logOutButton.setOnMouseExited(event -> {
             // Set normal style
-        	logOutButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            logOutButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
-        
-        
+
+
         HBox hb2 = new HBox(20);
-        hb2.getChildren().addAll(addApplianceButton,consumptionReportButton,checkreviews,logOutButton);
+        hb2.getChildren().addAll(addApplianceButton, consumptionReportButton, checkreviews, logOutButton);
         hb2.setStyle("-fx-alignment: center;");
 //        vbox.getChildren().addAll(addApplianceButton, consumptionReportButton, logOutButton);
 //        v1.getChildren().addAll(heading);
 //        borderPane.setTop(v1);
 //        borderPane.setCenter(vbox);
         HBox hbox = new HBox(20);
-        hbox.getChildren().addAll(heading,hb2);
+        hbox.getChildren().addAll(heading, hb2);
         hbox.setStyle("-fx-alignment: center;");
         VBox vbox = new VBox(20);
 
         Pane pane = new HBox(50);
         Image image = new Image("6.png");
-        BackgroundImage im=new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        Background bGround=new Background(im);
+        BackgroundImage im = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Background bGround = new Background(im);
         pane.setBackground(bGround);
         pane.getChildren().addAll(vbox);
 
-        vbox.getChildren().addAll(hbox,hb2);
+        vbox.getChildren().addAll(hbox, hb2);
         vbox.setStyle("-fx-alignment: center;");
 
-        
-        
 
         Scene scene = new Scene(pane, 700, 400);
         primaryStage.setTitle("User Dashboard");
@@ -540,7 +536,7 @@ public class EnergyManagementSystem extends Application {
 
         Stage dialogStage = new Stage();
         dialogStage.setTitle("Add Appliance");
-    	Label heading = new Label();
+        Label heading = new Label();
         Text text = new Text("ADD APPLIANCE");
         text.setFont(Font.font("Georgia", FontWeight.BOLD, FontPosture.ITALIC, 35));
         text.setFill(Color.WHITE);
@@ -554,20 +550,20 @@ public class EnergyManagementSystem extends Application {
         TextField nameField = new TextField();
         nameLabel.setStyle("-fx-text-fill: white;");
         HBox hb2 = new HBox(10);
-        hb2.getChildren().addAll(nameLabel,nameField);
+        hb2.getChildren().addAll(nameLabel, nameField);
         hb2.setStyle("-fx-alignment: center;");
 
         Label usageLabel = new Label("Usage per Minute:");
         TextField usageField = new TextField();
         usageLabel.setStyle("-fx-text-fill: white;");
         HBox hb3 = new HBox(10);
-        hb3.getChildren().addAll(usageLabel,usageField);
+        hb3.getChildren().addAll(usageLabel, usageField);
         hb3.setStyle("-fx-alignment: center;");
         Label numbermin = new Label("Usage Minutes:");
         TextField minField = new TextField();
         numbermin.setStyle("-fx-text-fill: white;");
         HBox hb4 = new HBox(10);
-        hb4.getChildren().addAll(numbermin,minField);
+        hb4.getChildren().addAll(numbermin, minField);
         hb4.setStyle("-fx-alignment: center;");
 
         Button addButton = new Button("Add");
@@ -575,27 +571,27 @@ public class EnergyManagementSystem extends Application {
         addButton.setPrefWidth(80);
         addButton.setOnMouseEntered(event -> {
             // Set hover style
-        	addButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            addButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         addButton.setOnMouseExited(event -> {
             // Set normal style
-        	addButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            addButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
-        
-        
+
+
         Button backButton = new Button("Back");
-        
+
         backButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         backButton.setPrefWidth(80);
         backButton.setOnMouseEntered(event -> {
             // Set hover style
-        	backButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            backButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         backButton.setOnMouseExited(event -> {
             // Set normal style
-        	backButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            backButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
         backButton.setOnAction(e -> showUserDashboard(userIndex));
         addButton.setOnAction(e -> {
@@ -605,24 +601,24 @@ public class EnergyManagementSystem extends Application {
             customers.get(userIndex).addAppliance(name, usagePerMin, Min);
             dialogStage.close();
         });
-        
+
         HBox hb5 = new HBox(10);
-        hb5.getChildren().addAll(addButton,backButton);
+        hb5.getChildren().addAll(addButton, backButton);
         hb5.setStyle("-fx-alignment: center;");
-        
+
         HBox hbox = new HBox(20);
-        hbox.getChildren().addAll(heading,hb2);
+        hbox.getChildren().addAll(heading, hb2);
         hbox.setStyle("-fx-alignment: center;");
         VBox vbox = new VBox(20);
 
         Pane pane = new HBox(50);
         Image image = new Image("8.png");
-        BackgroundImage im=new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        Background bGround=new Background(im);
+        BackgroundImage im = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Background bGround = new Background(im);
         pane.setBackground(bGround);
         pane.getChildren().addAll(vbox);
 
-        vbox.getChildren().addAll(hbox,hb2,hb3,hb4,hb5);
+        vbox.getChildren().addAll(hbox, hb2, hb3, hb4, hb5);
         vbox.setStyle("-fx-alignment: center;");
         Scene scene = new Scene(pane, 700, 400);
 
@@ -643,7 +639,7 @@ public class EnergyManagementSystem extends Application {
     }
 
     private void showConsumptionReport(int userIndex) {
-        Stage dialogStage = new Stage(); 
+        Stage dialogStage = new Stage();
 
         Customer user = customers.get(userIndex);
 
@@ -670,36 +666,36 @@ public class EnergyManagementSystem extends Application {
         backButton.setPrefWidth(80);
         backButton.setOnMouseEntered(event -> {
             // Set hover style
-        	backButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            backButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         backButton.setOnMouseExited(event -> {
             // Set normal style
-        	backButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            backButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
-        
+
         backButton.setOnAction(e -> showUserDashboard(userIndex));
-        
-        
+
+
         Button okButton = new Button("OK");
         okButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         okButton.setPrefWidth(80);
         okButton.setOnMouseEntered(event -> {
             // Set hover style
-        	okButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            okButton.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         okButton.setOnMouseExited(event -> {
             // Set normal style
-        	okButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            okButton.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
-        
+
         okButton.setOnAction(e -> {
-        	dialogStage.close();
+            dialogStage.close();
             rateUs(userIndex);
         });
 
-        vbox.getChildren().addAll(appliancesLabel, appliancesListView, pc, alertLabel, backButton,okButton);
+        vbox.getChildren().addAll(appliancesLabel, appliancesListView, pc, alertLabel, backButton, okButton);
 
         Scene scene = new Scene(vbox, 700, 400);
         scene.setFill(Color.AZURE);
@@ -708,9 +704,8 @@ public class EnergyManagementSystem extends Application {
         dialogStage.show();
     }
 
-    
 
-	private void showAlert(String message) {
+    private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Users");
         alert.setHeaderText("PLATFORM USERS ");
@@ -731,10 +726,11 @@ public class EnergyManagementSystem extends Application {
         loadDataFromFile(); // Load data from file
         showLoginForm();
     }
-    public void rateUs(int userIndex){
-    	Stage stage=new Stage();
 
-    	Label heading = new Label();
+    public void rateUs(int userIndex) {
+        Stage stage = new Stage();
+
+        Label heading = new Label();
         Text text = new Text("Rate Us");
         text.setFont(Font.font("Georgia", FontWeight.BOLD, FontPosture.ITALIC, 35));
         text.setFill(Color.BLACK);
@@ -751,14 +747,14 @@ public class EnergyManagementSystem extends Application {
         RadioButton Project1 = new RadioButton("Yes");
         RadioButton Project2 = new RadioButton("NO");
         HBox hb2 = new HBox(10);
-        hb2.getChildren().addAll(l2,Project1,Project2);
+        hb2.getChildren().addAll(l2, Project1, Project2);
         hb2.setStyle("-fx-alignment: center;");
 
         // Add radio buttons to the ToggleGroup
         Project1.setToggleGroup(toggleGroup);
         Project2.setToggleGroup(toggleGroup);
-        
-        
+
+
         //question no 2
         Label l3 = new Label("How was our service ?");
         l3.setStyle("-fx-text-fill: black;");
@@ -766,65 +762,65 @@ public class EnergyManagementSystem extends Application {
         RadioButton service2 = new RadioButton("Average");
         RadioButton service3 = new RadioButton("Bad");
         HBox hb3 = new HBox(10);
-        hb3.getChildren().addAll(l3,service1,service2,service3);
+        hb3.getChildren().addAll(l3, service1, service2, service3);
         hb3.setStyle("-fx-alignment: center;");
 
         // Add radio buttons to the ToggleGroup
         service1.setToggleGroup(toggleGroup);
         service2.setToggleGroup(toggleGroup);
         service3.setToggleGroup(toggleGroup);
-        
+
         Label l4 = new Label("Please add some comments regarding our Service ?");
         l4.setStyle("-fx-text-fill: black;");
 
         TextField comments = new TextField();
         HBox hb4 = new HBox(10);
-        hb4.getChildren().addAll(l4,comments);
+        hb4.getChildren().addAll(l4, comments);
         hb4.setStyle("-fx-alignment: center;");
-        
+
         Label l5 = new Label("Your Gmail ?");
         l5.setStyle("-fx-text-fill: black;");
         TextField gmail = new TextField();
         HBox hb5 = new HBox(10);
-        hb5.getChildren().addAll(l5,gmail);
+        hb5.getChildren().addAll(l5, gmail);
         hb5.setStyle("-fx-alignment: center;");
-        
+
         Button Submit = new Button("Submit");
         Submit.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         Submit.setPrefWidth(80);
         Submit.setOnMouseEntered(event -> {
             // Set hover style
-        	Submit.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
+            Submit.setStyle("-fx-background-color:#dea5a4 ; -fx-text-fill:#FFFFFF ; -fx-font-size: 13px;");
         });
 
         Submit.setOnMouseExited(event -> {
             // Set normal style
-        	Submit.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
+            Submit.setStyle("-fx-background-color:#FFFFFF ; -fx-text-fill:#c96d6c ; -fx-font-size: 13px;");
         });
         Submit.setOnAction(e -> {
             saveOpinions(userIndex, toggleGroup, comments.getText(), gmail.getText());
             stage.close();
             showUserDashboard(userIndex);
         });
-        
+
         HBox hb6 = new HBox(10);
         hb6.getChildren().addAll(Submit);
         hb6.setStyle("-fx-alignment: center;");
-        
+
 
         HBox hbox = new HBox(20);
-        hbox.getChildren().addAll(heading,hb2,hb3,hb4,hb5,hb6);
+        hbox.getChildren().addAll(heading, hb2, hb3, hb4, hb5, hb6);
         hbox.setStyle("-fx-alignment: center;");
         VBox vbox = new VBox(20);
 
         Pane pane = new HBox(50);
         Image image = new Image("white.png");
-        BackgroundImage im=new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        Background bGround=new Background(im);
+        BackgroundImage im = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        Background bGround = new Background(im);
         pane.setBackground(bGround);
         pane.getChildren().addAll(vbox);
 
-        vbox.getChildren().addAll(hbox,hb2,hb3,hb4,hb5,hb6);
+        vbox.getChildren().addAll(hbox, hb2, hb3, hb4, hb5, hb6);
         vbox.setStyle("-fx-alignment: center;");
         Scene scene = new Scene(pane, 700, 400);
 
@@ -833,9 +829,8 @@ public class EnergyManagementSystem extends Application {
         stage.show();
 
 
-
-
     }
+
     private void saveOpinions(int userIndex, ToggleGroup toggleGroup, String userComments, String userEmail) {
         File file = new File("customer_opinions.txt");
 
@@ -855,7 +850,7 @@ public class EnergyManagementSystem extends Application {
         RadioButton selectedRadioButton = (RadioButton) toggleGroup.getSelectedToggle();
         return selectedRadioButton.getText();
     }
-    
+
     private void showReviews() {
         try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Bilal\\Desktop\\EnergyManagementSystem\\customer_opinions.txt"))) {
             StringBuilder opinions = new StringBuilder();
